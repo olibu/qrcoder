@@ -13,13 +13,17 @@
       </div>
 
       <div class="py-2"></div>
-
+      
       <v-textarea 
         label="Data"
         v-model="data"
         placeholder="Content of the QR Code"
         hint="Type or paste the data of the QR Code"
+        @update:model-value="generate"
       ></v-textarea>
+
+      <div class="py-2"></div>
+
       <v-btn
         @click="generate"
       >
@@ -28,15 +32,15 @@
 
       <div class="py-2"></div>
 
-      <canvas id="canvas" :style="{ backgroundImage: `url(${imagePath})` }"></canvas>
-
-      <v-img
-      v-model="image"
-      aspect-ratio="1"
-      width="100"
-      src="https://cdn.vuetifyjs.com/images/parallax/material.jpg"
-      cover
-    ></v-img>
+      <div class="d-flex justify-center" >
+        <div class="qrcode">
+          <v-img
+            class="rounded-xxl"
+            aspect-ratio="1"
+            :src="image"
+          ></v-img>
+        </div>
+      </div>
 
       <div class="py-2"></div>
     </v-responsive>
@@ -47,11 +51,12 @@
 import {ref} from 'vue'
 import { useAppStore } from '@/store/app.js'
 import QRCode from 'qrcode'
+import defaultQr from '@/assets/default_qr.png'
 
 const store = useAppStore()
 
 const data = ref('')
-const image = ref()
+const image = ref(defaultQr)
 
 
 const generate = async () => {
@@ -63,25 +68,20 @@ const generate = async () => {
 
   try {
     const qrcode = await QRCode.toDataURL(data.value)
-    const canvas = document.getElementById('canvas')
     image.value = qrcode
   } catch (err) {
     console.error(err)
   }
 
 }
-
-const loadImage = (base64img) => {
-  const canvas = document.getElementById('canvas')
-  const ctx = canvas.getContext("2d")
-  const reader = new FileReader
-  reader.onload = function (event) {
-    const img = new Image()
-    img.src = reader.result
-    img.onload = function () {
-      ctx.drawImage(this, 0, 0, canvas.width, canvas.height)
-    }
-  }
-  reader.readAsDataURL(base64img);
-}
 </script>
+
+<style scoped>
+.qrcode {
+  width: 80%;
+  height: 80%;
+}
+.rounded-xxl {
+  border-radius: 80px;
+}
+</style>
