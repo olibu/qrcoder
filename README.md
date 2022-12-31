@@ -20,6 +20,7 @@ The QR Code will be generated automatically and can be shared by any other devic
 
 # Todo:
 
+* Further content types (e.g. wifi)
 * Add scanner
 
 # Releases
