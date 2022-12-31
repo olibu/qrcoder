@@ -18,6 +18,20 @@ Open the page in Safari on iOS or any modern browser on any other device and typ
 The QR Code will be generated automatically and can be shared by any other device with a QR Code scanner 
 (e.g. by the camera app on iOS).
 
+# QR Code Details
+
+## Wifi
+
+To provide a Wifi QR Code the following content has to be provided.
+
+```
+WIFI:T:<Authentifikation>;S:<SSID>;P:<PSK>:H:<HIDDEN>;
+```
+* Authentification: WPA or WEP or nopass
+* SSID: The SSID of the Wifi
+* PSK: The password of the Wifi
+* HIDDEN: "HIDDEN" if the Wifi is hidden (otherwise empty)
+
 # Todo:
 
 * Further content types (e.g. wifi)
