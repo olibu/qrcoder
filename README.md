@@ -25,12 +25,82 @@ The QR Code will be generated automatically and can be shared by any other devic
 To provide a Wifi QR Code the following content has to be provided.
 
 ```
-WIFI:T:<Authentifikation>;S:<SSID>;P:<PSK>:H:<HIDDEN>;
+WIFI:T:<Authentifikation>;S:<SSID>;P:<PSK>;H:true;
+WIFI:T:<Authentifikation>;S:<SSID>;P:<PSK>;;
 ```
 * Authentification: WPA or WEP or nopass
 * SSID: The SSID of the Wifi
 * PSK: The password of the Wifi
-* HIDDEN: "HIDDEN" if the Wifi is hidden (otherwise empty)
+* H: "H:true" if the Wifi is hidden (otherwise empty)
+
+## Telefon
+
+```
+tel:222
+```
+
+## SMS
+
+```
+SMSTO:<mobile>:<message>
+```
+
+## Email
+
+```
+mailto:<email>?subject=<subject>&<message>
+```
+
+## VCard
+
+```
+BEGIN:VCARD
+VERSION:3.0
+N:<lastname>:<firstname>
+FN:<firstname> <lastname>
+TITLE:<title>
+ORG:<org>
+URL:<url>
+EMAIL;TYPE=INTERNET:<email>
+TEL;TYPE=voice,work,pref:<phone work>
+TEL;TYPE=voice,home,pref:<phone private>
+TEL;TYPE=voice,cell,pref:<phone mobile>
+TEL;TYPE=fax,work,pref:<fax work>
+TEL;TYPE=fax,home,pref:<fax home>
+ADR:;;<street>;<city>;<state>;<zip>;<country>
+END:VCARD
+```
+
+## MeCard
+
+```
+MECARD:N:<lastname>,<firstname>;NICKNAME:<nick>;TEL:<phone1>;TEL:<phone2>;TEL:<phone3>;EMAIL:<email>;BDAY:<yyyymmdd>;NOTE:<notes>;ADR:,,<street>,<city>,<state>,<zip>,<country>;;
+```
+
+## VEvent
+
+```
+BEGIN:VEVENT
+SUMMARY:<event name>
+LOCATION:<location>
+DTSTART:YYYYMMDDTHHMMSS
+DTEND:YYYYMMDDTHHMMSS
+END:VEVENT
+```
+
+
+
+## Bitcoin
+
+```
+bitcoin:<receipient>?<amount>&<message>
+bitcoincash:<receipient>?<amount>&<message>
+ethereum:<receipient>?<amount>&<message>
+litecoin:<receipient>?<amount>&<message>
+dash:<receipient>?<amount>&<message>
+```
+
+
 
 # Todo:
 
