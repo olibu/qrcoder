@@ -88,8 +88,6 @@ DTEND:YYYYMMDDTHHMMSS
 END:VEVENT
 ```
 
-
-
 ## Bitcoin
 
 ```
@@ -100,12 +98,10 @@ litecoin:<receipient>?<amount>&<message>
 dash:<receipient>?<amount>&<message>
 ```
 
-
-
 # Todo:
 
 * Further content types (e.g. wifi)
-* Add scanner
+* Add raw scanner
 
 # Releases
 
