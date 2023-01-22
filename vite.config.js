@@ -31,7 +31,7 @@ export default defineConfig({
         name: 'QRCoder',
         short_name: 'QRCoder',
         description: 'QRCoder',
-        theme_color: '#000000',
+        theme_color: '#121212',
         icons: [
           {
             src: 'icon192.png',
