@@ -25,8 +25,8 @@ The QR Code will be generated automatically and can be shared by any other devic
 To provide a Wifi QR Code the following content has to be provided.
 
 ```
-WIFI:T:<Authentifikation>;S:<SSID>;P:<PSK>;H:true;
-WIFI:T:<Authentifikation>;S:<SSID>;P:<PSK>;;
+WIFI:T:<Authentification>;S:<SSID>;P:<PSK>;H:true;
+WIFI:T:<Authentification>;S:<SSID>;P:<PSK>;;
 ```
 * Authentification: WPA or WEP or nopass
 * SSID: The SSID of the Wifi
