@@ -56,7 +56,7 @@ mailto:<email>?subject=<subject>&<message>
 ```
 BEGIN:VCARD
 VERSION:3.0
-N:<lastname>:<firstname>
+N:<lastname>;<firstname>
 FN:<firstname> <lastname>
 TITLE:<title>
 ORG:<org>
@@ -104,6 +104,10 @@ dash:<receipient>?<amount>&<message>
 * Add raw scanner
 
 # Releases
+
+## 1.1.0
+
+* Dedicated forms for several use cases
 
 ## 1.0.0
 
