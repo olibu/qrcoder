@@ -2,6 +2,8 @@
 
 App to generate a QR Code locally.
 
+![Screenshot](qrcoder.png)
+
 There are a lot of QR Code scanners available and a view generators, too.
 But I didn't found one which takes care about privacy. All send the data to a backend
 to generate the QR Code. 
